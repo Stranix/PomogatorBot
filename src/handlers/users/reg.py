@@ -12,8 +12,9 @@ from aiogram.dispatcher.filters.state import StatesGroup
 from src.schemas import User
 from src.services import is_admin
 
-
 logger = logging.getLogger(__name__)
+
+
 class RegState(StatesGroup):
     user = State()
 
@@ -28,7 +29,6 @@ async def request_user(message: types.Message):
 
 @dp.message_handler(state=RegState.user, content_types=types.ContentType.TEXT)
 async def reg_user(message: types.Message, state: FSMContext):
-
     parse_text_answer = message.text.split(',')
 
     user = User(
