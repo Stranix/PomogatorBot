@@ -1,5 +1,11 @@
+import config
+import src.handlers
+
+from aiogram import executor
+
+
 def main():
-    pass
+    executor.start_polling(config.dp)
 
 
 if __name__ == '__main__':
